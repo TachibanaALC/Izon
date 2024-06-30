@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>投稿画面</title>
     <link rel="stylesheet" href="styles.css">
+    <script src ="post.js"></script>
 </head>
 <body>
     <nav>
@@ -14,15 +15,14 @@
     </header>
     <main>
         <form action="restore_post.php" method="POST">
-            <select name = "selected_kind" size ="1">
+            <select name = "selected_kind" id ="kind" size ="1">
                 <option value="caffein">カフェイン</option>
                 <option value="snack">お菓子</option>
             </select>
-            <label for="title">使用量:</label>
-            <input type="text" id="amount" name="amount" required>
+            <p>摂取量(<span id = consumed_unit_text>mg</span>):</p>
+            <input type="text" id="amount" name="amount" pattern="\d*" title ="数字のみを入力してください"required>
             <br>
-
-            <label for="content">内容:</label>
+            <p>内容:</p>
             <textarea id="comment" name="comment" rows="4" required></textarea>
             
             <br>

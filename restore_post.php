@@ -44,7 +44,7 @@ echo '<script>';
 ?>
 
     <footer>
-        <p>&copy; 2024 OMG</p>
+        &copy; 2024 OMG
     </footer>
 </body>
 </html>

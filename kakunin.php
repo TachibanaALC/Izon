@@ -28,6 +28,8 @@
 
         $total_amount = 0;
 
+        $unit = "mg";
+
         $loop_num = 0;
         
         //一行ずつ読み出し
@@ -41,13 +43,15 @@
             //選択した種類以外の種類ならスキップ
             if($line[0] != $selected_kind) continue;
             
-
+            //摂取量をカウントアップする
             for($i = 0; $i<count($line); $i++){
                 if($i == 1) $total_amount += intval($line[$i]);
             }
         }
+        if($selected_kind == "caffein") $unit = "mg";
+        if($selected_kind == "snack")$unit = "kcal";
 
-        echo "<p>". "あなたは<span class='calculate-result'>" .$total_amount ."mg</span>摂取しています……！！</p>"
+        echo "<p>". "あなたは<span class='calculate-result'>" .$total_amount . $unit."</span>摂取しています……！！</p>"
         
         ?>
     </div>
@@ -95,13 +99,12 @@
     </div>
         
     <form>
-            <a class="button" href="post.html"></a>
             <input type = "button" class="button" value="ホーム画面に戻る" onclick="location.href='home.html'">
     </form>
 
     </main>
     <footer>
-        <p>&copy; 2024 OMG</p>
+        &copy; 2024 OMG
     </footer>
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
