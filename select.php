@@ -8,17 +8,17 @@
 </head>
 <body>
     <header>
-        <h1>選択画面</h1>
+        <h1>確認画面</h1>
     </header>
     <main>
         <form method="POST" action = "kakunin.php">
         <section>
-            <h2>確認する</h2>
+            <h2>項目選択</h2>
             <select name = "selected_kind" size ="1">
                 <option value="caffein">カフェイン</option>
                 <option value="snack">お菓子</option>
             </select>
-            <button type="submit">選択したものを確認</button>
+            <button type="submit">確認する</button>
         </form>
         <br>
             <input type = "button" onclick = history.back() value ="戻る">
